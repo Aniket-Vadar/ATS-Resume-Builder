@@ -20,13 +20,16 @@ const Languages = () => {
           index={index}
         />
       ))}
-      <button type="button"
-              onClick={() => {
-                addLanguage(resumeData, setResumeData, "languages")
-              }}
-              aria-label="Add"
-              className="p-2 w-[37px] text-white bg-fuchsia-700 rounded text-xl">
-        <MdAddCircle/>
+      <button
+        type="button"
+        onClick={() => {
+          addLanguage(resumeData, setResumeData, "languages");
+        }}
+        aria-label="Add Language"
+        className="btn-action-add w-fit mt-1"
+      >
+        <MdAddCircle className="text-sm" />
+        <span>Add Language</span>
       </button>
     </div>
   );

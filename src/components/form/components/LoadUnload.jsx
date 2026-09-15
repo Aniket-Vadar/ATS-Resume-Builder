@@ -44,13 +44,13 @@ const LoadUnload = () => {
   };
 
   return (
-    <div className="bg-slate-900/60 border border-slate-800/80 rounded-xl p-3 flex items-center justify-between text-xs shadow-sm">
-      <span className="text-slate-400 font-medium flex items-center gap-1.5">
+    <div className="bg-slate-50 border border-slate-200 rounded-xl p-3 flex items-center justify-between text-xs shadow-xs">
+      <span className="text-slate-600 font-medium flex items-center gap-1.5">
         <span>Quick Data Backup</span>
       </span>
       <div className="flex items-center gap-2">
-        <label className="flex items-center gap-1 px-2.5 py-1.5 text-slate-300 hover:text-white bg-slate-800 hover:bg-slate-700 border border-slate-700 rounded-lg cursor-pointer transition-colors" title="Load JSON backup">
-          <FaCloudUploadAlt className="text-indigo-400 text-sm" />
+        <label className="flex items-center gap-1 px-2.5 py-1.5 text-slate-700 hover:text-slate-900 bg-white hover:bg-slate-50 border border-slate-200 rounded-lg shadow-2xs cursor-pointer transition-colors" title="Load JSON backup">
+          <FaCloudUploadAlt className="text-indigo-600 text-sm" />
           <span>Import</span>
           <input
             aria-label="Load Data"
@@ -63,17 +63,17 @@ const LoadUnload = () => {
         <button
           type="button"
           aria-label="Save Data"
-          className="flex items-center gap-1 px-2.5 py-1.5 text-slate-300 hover:text-white bg-slate-800 hover:bg-slate-700 border border-slate-700 rounded-lg transition-colors cursor-pointer"
+          className="flex items-center gap-1 px-2.5 py-1.5 text-slate-700 hover:text-slate-900 bg-white hover:bg-slate-50 border border-slate-200 rounded-lg shadow-2xs transition-colors cursor-pointer"
           title="Download JSON backup"
           onClick={(event) =>
             handleDownload(
               resumeData,
-              (resumeData.name || "Resume").replace(/\s+/g, "_") + "_ATS_Data.json",
+              resumeData.name + ".json",
               event
             )
           }
         >
-          <FaCloudDownloadAlt className="text-indigo-400 text-sm" />
+          <FaCloudDownloadAlt className="text-indigo-600 text-sm" />
           <span>Export</span>
         </button>
       </div>

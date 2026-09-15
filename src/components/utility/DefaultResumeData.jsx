@@ -47,17 +47,8 @@ const DefaultResumeData = {
   ],
   projects: [
     {
-      name: "Vision + LLM Customer Support Assistant",
-      link: "",
-      description: "",
-      keyAchievements:
-        "Built multimodal support agent combining computer vision and LLMs to classify product defect images and automate replacement workflows.",
-      startYear: "2025-06-01",
-      endYear: "2025-08-01",
-    },
-    {
       name: "Autonomous Multi-Agent Travel Planner",
-      link: "",
+      link: "github.com/alexmorgan/agent-travel",
       description: "",
       keyAchievements:
         "Developed multi-agent system using Gemini 2.0 Flash for parallel location research, real-time Wikipedia API retrieval, and Play.ht TTS audio synthesis.",
@@ -65,11 +56,11 @@ const DefaultResumeData = {
       endYear: "2025-02-01",
     },
     {
-      name: "Deepfake Video Detection Pipeline",
-      link: "",
+      name: "Vision + LLM Customer Support Assistant",
+      link: "github.com/alexmorgan/vision-support",
       description: "",
       keyAchievements:
-        "Built hybrid CNN-RNN architecture combining ResNet (spatial CNN) and LSTM (temporal sequence) for frame-level video deepfake detection.",
+        "Built multimodal support agent combining computer vision and LLMs to classify product defect images and automate replacement workflows.",
       startYear: "2024-08-01",
       endYear: "2024-12-01",
     },

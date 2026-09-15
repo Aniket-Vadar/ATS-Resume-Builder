@@ -50,7 +50,7 @@ const Preview = () => {
   const isVisible = (key) => !hiddenSections.includes(key);
 
   return (
-    <div className="flex-1 preview rm-padding-print p-4 md:p-6 overflow-y-auto h-full flex justify-center bg-slate-900/40">
+    <div className="flex-1 preview rm-padding-print p-4 md:p-6 overflow-y-auto h-full flex justify-center bg-slate-100">
       <A4PageWrapper>
         <ModalHighlightMenu/>
         <DragDropContext onDragEnd={(result) => onDragEndHandler(result, resumeData, setResumeData)}>
@@ -72,7 +72,7 @@ const Preview = () => {
           {/* SKILLS */}
           {isVisible("skills") && resumeData.skills && resumeData.skills.length > 0 && (
             <div className="mb-1.5">
-              <Droppable droppableId="skills" type="SKILLS">
+              <Droppable droppableId="skills" type="SKILLS" isDropDisabled={false} isCombineEnabled={false} ignoreContainerClipping={false}>
                 {(provided) => (
                   <div {...provided.droppableProps} ref={provided.innerRef}>
                     <h2 className="section-title mb-1 border-b-2 border-gray-300">
@@ -150,7 +150,7 @@ const Preview = () => {
           {/* EXPERIENCE */}
           {isVisible("experience") && resumeData.workExperience && resumeData.workExperience.length > 0 && (
             <div className="mb-1.5">
-              <Droppable droppableId="work-experience" type="WORK_EXPERIENCE">
+              <Droppable droppableId="work-experience" type="WORK_EXPERIENCE" isDropDisabled={false} isCombineEnabled={false} ignoreContainerClipping={false}>
                 {(provided) => (
                   <div {...provided.droppableProps} ref={provided.innerRef}>
                     <h2 className="section-title mb-0.5 border-b-2 border-gray-300">
@@ -190,6 +190,9 @@ const Preview = () => {
                             <Droppable
                               droppableId={`WORK_EXPERIENCE_KEY_ACHIEVEMENT-${index}`}
                               type="WORK_EXPERIENCE_KEY_ACHIEVEMENT"
+                              isDropDisabled={false}
+                              isCombineEnabled={false}
+                              ignoreContainerClipping={false}
                             >
                               {(provided) => (
                                 <ul
@@ -248,7 +251,7 @@ const Preview = () => {
           {/* PROJECTS */}
           {isVisible("projects") && resumeData.projects && resumeData.projects.length > 0 && (
             <div className="mb-1.5">
-              <Droppable droppableId="projects" type="PROJECTS">
+              <Droppable droppableId="projects" type="PROJECTS" isDropDisabled={false} isCombineEnabled={false} ignoreContainerClipping={false}>
                 {(provided) => (
                   <div {...provided.droppableProps} ref={provided.innerRef}>
                     <h2 className="section-title mb-1 border-b-2 border-gray-300">
@@ -296,6 +299,9 @@ const Preview = () => {
                             <Droppable
                               droppableId={`PROJECTS_KEY_ACHIEVEMENT-${index}`}
                               type="PROJECTS_KEY_ACHIEVEMENT"
+                              isDropDisabled={false}
+                              isCombineEnabled={false}
+                              ignoreContainerClipping={false}
                             >
                               {(provided) => (
                                 <ul
@@ -371,13 +377,13 @@ const Preview = () => {
       </A4PageWrapper>
 
       {/* Floating Canvas Quick-Actions (Bottom Center) */}
-      <div className="exclude-print fixed bottom-6 right-1/4 translate-x-1/2 z-30 flex items-center gap-2 px-3 py-1.5 bg-slate-950/90 backdrop-blur-md border border-slate-800/90 rounded-full shadow-2xl text-xs text-slate-300">
-        <span className="text-[11px] font-mono text-slate-400 px-1">A4 Sheet</span>
-        <div className="h-3 w-px bg-slate-800"></div>
+      <div className="exclude-print fixed bottom-6 right-1/4 translate-x-1/2 z-30 flex items-center gap-2 px-3.5 py-1.5 bg-white/95 backdrop-blur-md border border-slate-200 rounded-full shadow-lg text-xs text-slate-700">
+        <span className="text-[11px] font-mono text-slate-500 px-1">A4 Printable</span>
+        <div className="h-3 w-px bg-slate-200"></div>
         <button
           type="button"
           onClick={() => window.print()}
-          className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-indigo-600 hover:bg-indigo-500 text-white font-semibold transition-colors cursor-pointer shadow-md shadow-indigo-600/20"
+          className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold transition-colors cursor-pointer shadow-sm shadow-indigo-600/20"
           title="Export / Print PDF"
         >
           <span>Export PDF</span>

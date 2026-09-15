@@ -14,7 +14,7 @@ import SectionWrapper from "../components/SectionWrapper";
 
 const Form = () => {
   return (
-    <form className="p-5 bg-slate-950 border-r border-slate-800 exclude-print w-full md:w-[480px] md:min-w-[420px] md:max-w-[500px] h-full overflow-y-auto space-y-3.5">
+    <form className="p-5 bg-white border-r border-slate-200 exclude-print w-full md:w-[480px] md:min-w-[420px] md:max-w-[500px] h-full overflow-y-auto space-y-3.5 shadow-xs">
       <LoadUnload/>
       <PersonalInformation/>
       <SocialMedias/>

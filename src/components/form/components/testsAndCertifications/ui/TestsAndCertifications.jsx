@@ -20,13 +20,16 @@ const TestsAndCertifications = () => {
           index={index}
         />
       ))}
-      <button type="button"
-              onClick={() => {
-                addCertificate(resumeData, setResumeData)
-              }}
-              aria-label="Add"
-              className="p-2 w-[37px] text-white bg-fuchsia-700 rounded text-xl">
-        <MdAddCircle/>
+      <button
+        type="button"
+        onClick={() => {
+          addCertificate(resumeData, setResumeData);
+        }}
+        aria-label="Add Certificate"
+        className="btn-action-add w-fit mt-1"
+      >
+        <MdAddCircle className="text-sm" />
+        <span>Add Certificate</span>
       </button>
     </div>
   );

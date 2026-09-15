@@ -8,9 +8,9 @@ const Education = ({education, index}) => {
   const {resumeData, setResumeData} = useContext(ResumeContext);
 
   return (
-    <div className="p-3.5 bg-slate-950/60 border border-slate-800/90 rounded-lg space-y-2.5 mb-3 relative group">
+    <div className="p-3.5 bg-slate-50 border border-slate-200 rounded-lg space-y-2.5 mb-3 relative group">
       <div className="flex items-center justify-between">
-        <span className="text-xs font-semibold text-indigo-400">
+        <span className="text-xs font-semibold text-indigo-600">
           Education #{index + 1} {education.school ? `• ${education.school}` : ""}
         </span>
         <button
@@ -28,7 +28,7 @@ const Education = ({education, index}) => {
 
       <div className="space-y-2">
         <div>
-          <label className="block text-[10px] font-semibold text-slate-400 mb-0.5 tracking-wider uppercase">School / University</label>
+          <label className="block text-[10px] font-semibold text-slate-500 mb-0.5 tracking-wider uppercase">School / University</label>
           <input
             type="text"
             placeholder="e.g. University of California, Berkeley"
@@ -41,7 +41,7 @@ const Education = ({education, index}) => {
           />
         </div>
         <div>
-          <label className="block text-[10px] font-semibold text-slate-400 mb-0.5 tracking-wider uppercase">Degree & Field of Study</label>
+          <label className="block text-[10px] font-semibold text-slate-500 mb-0.5 tracking-wider uppercase">Degree & Field of Study</label>
           <input
             type="text"
             placeholder="e.g. Bachelor of Science in Computer Science"
@@ -55,7 +55,7 @@ const Education = ({education, index}) => {
         </div>
         <div className="grid grid-cols-2 gap-2">
           <div>
-            <label className="block text-[10px] font-semibold text-slate-400 mb-0.5 tracking-wider uppercase">Start Date</label>
+            <label className="block text-[10px] font-semibold text-slate-500 mb-0.5 tracking-wider uppercase">Start Date</label>
             <input
               type="date"
               name="startYear"
@@ -67,7 +67,7 @@ const Education = ({education, index}) => {
             />
           </div>
           <div>
-            <label className="block text-[10px] font-semibold text-slate-400 mb-0.5 tracking-wider uppercase">Graduation / End Date</label>
+            <label className="block text-[10px] font-semibold text-slate-500 mb-0.5 tracking-wider uppercase">Graduation / End Date</label>
             <input
               type="date"
               name="endYear"

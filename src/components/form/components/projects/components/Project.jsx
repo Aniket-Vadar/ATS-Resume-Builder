@@ -12,9 +12,9 @@ const Project = ({project, index}) => {
   // TODO change the "end year" to the "end date" for clarity  (also in the name of variable)
 
   return (
-    <div className="p-3.5 bg-slate-950/60 border border-slate-800/90 rounded-lg space-y-2.5 mb-3 relative group">
+    <div className="p-3.5 bg-slate-50 border border-slate-200 rounded-lg space-y-2.5 mb-3 relative group">
       <div className="flex items-center justify-between">
-        <span className="text-xs font-semibold text-indigo-400">
+        <span className="text-xs font-semibold text-indigo-600">
           Project #{index + 1} {project.name ? `• ${project.name}` : ""}
         </span>
         <button
@@ -32,7 +32,7 @@ const Project = ({project, index}) => {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
         <div>
-          <label className="block text-[10px] font-semibold text-slate-400 mb-0.5 tracking-wider uppercase">Project Name</label>
+          <label className="block text-[10px] font-semibold text-slate-500 mb-0.5 tracking-wider uppercase">Project Name</label>
           <input
             type="text"
             placeholder="e.g. Autonomous Multi-Agent System"
@@ -43,7 +43,7 @@ const Project = ({project, index}) => {
           />
         </div>
         <div>
-          <label className="block text-[10px] font-semibold text-slate-400 mb-0.5 tracking-wider uppercase">Project / Repo Link</label>
+          <label className="block text-[10px] font-semibold text-slate-500 mb-0.5 tracking-wider uppercase">Project / Repo Link</label>
           <input
             type="text"
             placeholder="github.com/user/project"
@@ -54,7 +54,7 @@ const Project = ({project, index}) => {
           />
         </div>
         <div>
-          <label className="block text-[10px] font-semibold text-slate-400 mb-0.5 tracking-wider uppercase">Start Date</label>
+          <label className="block text-[10px] font-semibold text-slate-500 mb-0.5 tracking-wider uppercase">Start Date</label>
           <input
             type="date"
             name="startYear"
@@ -64,7 +64,7 @@ const Project = ({project, index}) => {
           />
         </div>
         <div>
-          <label className="block text-[10px] font-semibold text-slate-400 mb-0.5 tracking-wider uppercase">End Date</label>
+          <label className="block text-[10px] font-semibold text-slate-500 mb-0.5 tracking-wider uppercase">End Date</label>
           <input
             type="date"
             name="endYear"
@@ -77,10 +77,10 @@ const Project = ({project, index}) => {
 
       <div>
         <div className="flex items-center justify-between mb-0.5">
-          <label className="text-[10px] font-semibold text-slate-400 tracking-wider uppercase">
+          <label className="text-[10px] font-semibold text-slate-500 tracking-wider uppercase">
             Project Description / Key Highlights
           </label>
-          <span className="text-[10px] text-slate-500">1 bullet per line</span>
+          <span className="text-[10px] text-slate-400">1 bullet per line</span>
         </div>
         <textarea
           placeholder="• Built multimodal pipeline with computer vision and LLMs...&#10;• Orchestrated parallel agent workflows using Gemini 2.0 Flash..."

@@ -25,33 +25,33 @@ const A4PageWrapper = ({ children }) => {
     <div className="w-full max-w-[800px] mx-auto a4-page-wrapper">
       {/* Live 1-Page Status Indicator (Hidden in print) */}
       <div
-        className={`exclude-print sticky top-0 z-30 flex items-center justify-between px-3.5 py-2 text-xs font-semibold rounded-lg shadow-sm mb-4 border backdrop-blur-md transition-all ${
+        className={`exclude-print sticky top-0 z-30 flex items-center justify-between px-3.5 py-2 text-xs font-semibold rounded-lg shadow-xs mb-4 border backdrop-blur-md transition-all ${
           pageInfo.isOnePage 
-            ? "bg-emerald-950/80 border-emerald-800/80 text-emerald-300"
-            : "bg-rose-950/80 border-rose-800/80 text-rose-300"
+            ? "bg-emerald-50/95 border-emerald-200 text-emerald-800"
+            : "bg-rose-50/95 border-rose-200 text-rose-800"
         }`}
       >
         <span className="flex items-center gap-2">
           <span className="flex items-center gap-1.5">
             {pageInfo.isOnePage ? (
               <>
-                <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
-                <span>Fits Cleanly on 1 Page</span>
+                <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
+                <span className="font-semibold">Fits Cleanly on 1 Page</span>
               </>
             ) : (
               <>
-                <span className="w-2 h-2 rounded-full bg-rose-400 animate-ping"></span>
-                <span>Exceeds 1 Page Threshold</span>
+                <span className="w-2 h-2 rounded-full bg-rose-500 animate-pulse"></span>
+                <span className="font-semibold">Exceeds 1 Page Threshold</span>
               </>
             )}
           </span>
           {!pageInfo.isOnePage && (
-            <span className="text-[11px] font-normal opacity-85">
+            <span className="text-[11px] font-normal text-rose-700">
               (Remove an item or bullet point to pull up onto Page 1)
             </span>
           )}
         </span>
-        <span className="font-mono text-[11px] px-2 py-0.5 rounded bg-black/40 border border-white/10">
+        <span className="font-mono text-[11px] px-2 py-0.5 rounded bg-white border border-slate-200 text-slate-700 shadow-2xs">
           {pageInfo.height}px / 1060px
         </span>
       </div>

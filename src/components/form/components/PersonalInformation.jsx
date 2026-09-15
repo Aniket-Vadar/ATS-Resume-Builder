@@ -7,10 +7,10 @@ const PersonalInformation = ({}) => {
     useContext(ResumeContext);
 
   return (
-    <div className="bg-slate-900/90 border border-slate-800 p-4 rounded-xl shadow-sm hover:border-slate-700/80 transition-all">
-      <div className="flex items-center gap-2 mb-3 pb-2 border-b border-slate-800/80">
-        <FaUserCircle className="text-indigo-400 text-sm" />
-        <h2 className="text-sm font-semibold text-slate-200 tracking-wide uppercase">Personal Information</h2>
+    <div className="bg-white border border-slate-200 p-4 rounded-xl shadow-xs hover:border-slate-300 transition-all">
+      <div className="flex items-center gap-2 mb-3 pb-2 border-b border-slate-100">
+        <FaUserCircle className="text-indigo-600 text-sm" />
+        <h2 className="text-sm font-bold text-slate-800 tracking-wide uppercase">Personal Information</h2>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
         <div>
