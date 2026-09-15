@@ -12,81 +12,84 @@ const Project = ({project, index}) => {
   // TODO change the "end year" to the "end date" for clarity  (also in the name of variable)
 
   return (
-    <div
-      className="flex w-fill gap-5 items-top"
-    >
-      <div
-        className="flex-1"
-      >
-        {/* Project name */}
-        <input
-          type="text"
-          placeholder="Project Name"
-          name="name"
-          className="w-full other-input"
-          value={project.name}
-          onChange={(e) => handleProject(resumeData, setResumeData, e, index)}
-        />
-        {/* Link */}
-        <input
-          type="text"
-          placeholder="Link"
-          name="link"
-          className="w-full other-input"
-          value={project.link}
-          onChange={(e) => handleProject(resumeData, setResumeData, e, index)}
-        />
-        {/* Description */}
-        <textarea
-          type="text"
-          placeholder="Description"
-          name="description"
-          className="w-full other-input h-32"
-          value={project.description}
-          maxLength="250"
-          onChange={(e) => handleProject(resumeData, setResumeData, e, index)}
-        />
-        {/* Key achievements */}
-        <textarea
-          type="text"
-          placeholder="Key Achievements"
-          name="keyAchievements"
-          className="w-full other-input h-40"
-          value={project.keyAchievements}
-          onChange={(e) => handleProject(resumeData, setResumeData, e, index)}
-        />
-        {/* Start date */}
-        <div className="flex-wrap-gap-2">
+    <div className="p-3.5 bg-slate-950/60 border border-slate-800/90 rounded-lg space-y-2.5 mb-3 relative group">
+      <div className="flex items-center justify-between">
+        <span className="text-xs font-semibold text-indigo-400">
+          Project #{index + 1} {project.name ? `• ${project.name}` : ""}
+        </span>
+        <button
+          type="button"
+          onClick={() => {
+            removeProject(resumeData, setResumeData, index);
+          }}
+          aria-label="Remove Project"
+          className="btn-action-del"
+          title="Delete project"
+        >
+          <BsTrash3 className="text-xs" />
+        </button>
+      </div>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+        <div>
+          <label className="block text-[10px] font-semibold text-slate-400 mb-0.5 tracking-wider uppercase">Project Name</label>
+          <input
+            type="text"
+            placeholder="e.g. Autonomous Multi-Agent System"
+            name="name"
+            className="w-full other-input mb-0 text-xs"
+            value={project.name}
+            onChange={(e) => handleProject(resumeData, setResumeData, e, index)}
+          />
+        </div>
+        <div>
+          <label className="block text-[10px] font-semibold text-slate-400 mb-0.5 tracking-wider uppercase">Project / Repo Link</label>
+          <input
+            type="text"
+            placeholder="github.com/user/project"
+            name="link"
+            className="w-full other-input mb-0 text-xs"
+            value={project.link}
+            onChange={(e) => handleProject(resumeData, setResumeData, e, index)}
+          />
+        </div>
+        <div>
+          <label className="block text-[10px] font-semibold text-slate-400 mb-0.5 tracking-wider uppercase">Start Date</label>
           <input
             type="date"
-            placeholder="Start Year"
             name="startYear"
-            className="flex-1 m-0 other-input"
+            className="w-full other-input mb-0 text-xs py-2"
             value={project.startYear}
             onChange={(e) => handleProject(resumeData, setResumeData, e, index)}
           />
-          {/* End data */}
+        </div>
+        <div>
+          <label className="block text-[10px] font-semibold text-slate-400 mb-0.5 tracking-wider uppercase">End Date</label>
           <input
             type="date"
-            placeholder="End Year"
             name="endYear"
-            className="flex-1 m-0 other-input"
+            className="w-full other-input mb-0 text-xs py-2"
             value={project.endYear}
             onChange={(e) => handleProject(resumeData, setResumeData, e, index)}
           />
         </div>
       </div>
-      <button
-        type="button"
-        onClick={() => {
-          removeProject(resumeData, setResumeData, index);
-        }}
-        aria-label="Remove Project"
-        className="btn-action-del h-fit"
-        title="Delete project"
-      >
-        <BsTrash3 className="text-sm" />
-      </button>
+
+      <div>
+        <div className="flex items-center justify-between mb-0.5">
+          <label className="text-[10px] font-semibold text-slate-400 tracking-wider uppercase">
+            Project Description / Key Highlights
+          </label>
+          <span className="text-[10px] text-slate-500">1 bullet per line</span>
+        </div>
+        <textarea
+          placeholder="• Built multimodal pipeline with computer vision and LLMs...&#10;• Orchestrated parallel agent workflows using Gemini 2.0 Flash..."
+          name="keyAchievements"
+          className="w-full other-input text-xs h-24 leading-relaxed font-sans"
+          value={project.keyAchievements}
+          onChange={(e) => handleProject(resumeData, setResumeData, e, index)}
+        />
+      </div>
     </div>
   );
 };

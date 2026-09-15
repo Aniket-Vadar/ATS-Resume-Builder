@@ -369,6 +369,20 @@ const Preview = () => {
 
         </DragDropContext>
       </A4PageWrapper>
+
+      {/* Floating Canvas Quick-Actions (Bottom Center) */}
+      <div className="exclude-print fixed bottom-6 right-1/4 translate-x-1/2 z-30 flex items-center gap-2 px-3 py-1.5 bg-slate-950/90 backdrop-blur-md border border-slate-800/90 rounded-full shadow-2xl text-xs text-slate-300">
+        <span className="text-[11px] font-mono text-slate-400 px-1">A4 Sheet</span>
+        <div className="h-3 w-px bg-slate-800"></div>
+        <button
+          type="button"
+          onClick={() => window.print()}
+          className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-indigo-600 hover:bg-indigo-500 text-white font-semibold transition-colors cursor-pointer shadow-md shadow-indigo-600/20"
+          title="Export / Print PDF"
+        >
+          <span>Export PDF</span>
+        </button>
+      </div>
     </div>
   );
 };
